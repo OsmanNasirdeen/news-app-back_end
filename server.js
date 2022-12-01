@@ -2,7 +2,7 @@ import fetch from "node-fetch";
 import express from "express";
 import dotenv from "dotenv";
 const app = express();
-const port = 700;
+const port = process.env.PORT || 7000;
 
 dotenv.config();
 
@@ -21,5 +21,5 @@ app.get("/", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`server is listening at port:${process.env.port}  `);
+  console.log(`server is listening at port:${port}  `);
 });
