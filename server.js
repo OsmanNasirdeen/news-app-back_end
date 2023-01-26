@@ -18,6 +18,7 @@ app.get("/", (req, res) => {
     .catch((error) => {
       res.json({ articles: "ooh! server down! try again in few minutes" });
       console.log(error);
+      console.log("hi");
     });
 });
 
