@@ -8,7 +8,7 @@ dotenv.config();
 
 app.get("/", (req, res) => {
   res.header("Access-Control-Allow-Origin", "*");
-  fetch(process.env.api_url)
+  fetch(process.env.api_url_2)
     .then((response) => {
       response.json().then((data) => {
         const { articles } = data;
