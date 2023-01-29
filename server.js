@@ -16,9 +16,9 @@ app.get("/", (req, res) => {
       });
     })
     .catch((error) => {
-      res.json({
-        articles: "oops! server is down please try again in few minutes",
-      });
+      res.send(
+        `<h2> oops! server is down please try again in few minutes </h2>`
+      );
     });
 });
 
