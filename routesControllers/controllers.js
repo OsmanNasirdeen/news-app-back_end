@@ -23,6 +23,7 @@ const allNews = (req, res) => {
 };
 
 const searchedNews = (req, res) => {
+  res.header("Access-Control-Allow-Origin", "*");
   const { search } = req.params;
   fetch(
     `https://newsapi.org/v2/everything?q=+${search}&language=en&to=${currentDate}&pageSize=4&apiKey=${process.env.api_key}`
@@ -36,6 +37,7 @@ const searchedNews = (req, res) => {
 };
 
 const categoryNews = (req, res) => {
+  res.header("Access-Control-Allow-Origin", "*");
   const { category } = req.query;
   console.log(req.query);
   fetch(
