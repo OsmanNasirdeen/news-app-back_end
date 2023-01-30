@@ -23,8 +23,8 @@ const allNews = (req, res) => {
 };
 
 const searchedNews = (req, res) => {
-  res.header("Access-Control-Allow-Origin", "*");
   const { search } = req.params;
+  res.header("Access-Control-Allow-Origin", "*");
   fetch(
     `https://newsapi.org/v2/everything?q=+${search}&language=en&to=${currentDate}&pageSize=4&apiKey=${process.env.api_key}`
   )
@@ -37,9 +37,9 @@ const searchedNews = (req, res) => {
 };
 
 const categoryNews = (req, res) => {
-  res.header("Access-Control-Allow-Origin", "*");
   const { category } = req.query;
-  console.log(req.query);
+  res.header("Access-Control-Allow-Origin", "*");
+
   fetch(
     `https://newsapi.org/v2/top-headlines?country=us&category=${category}&pageSize=5&apiKey=${process.env.api_key}`
   )
