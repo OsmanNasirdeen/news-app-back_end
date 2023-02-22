@@ -14,6 +14,7 @@ app.get("/", allNews);
 
 app.get("/top-headlines/:search", searchedNews);
 
+// app.get("/top-headlines/country?", specificCountryNews);
 app.get("/top-headlines?", categoryNews);
 
 app.listen(port, () => {

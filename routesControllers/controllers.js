@@ -50,5 +50,19 @@ const categoryNews = (req, res) => {
       console.log(error);
     });
 };
+// const specificCountryNews = (req, res) => {
+//   const { country } = req.query;
+//   res.header("Access-Control-Allow-Origin", "*");
+
+//   fetch(
+//     `https://newsapi.org/v2/top-headlines?country=${country}&pageSize=5&apiKey=${process.env.api_key}`
+//   )
+//     .then((response) => {
+//       displayResponse(response, res);
+//     })
+//     .catch((error) => {
+//       console.log(error);
+//     });
+// };
 
 export { allNews, searchedNews, categoryNews };
