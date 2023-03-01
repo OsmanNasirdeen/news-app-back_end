@@ -26,7 +26,7 @@ const searchedNews = (req, res) => {
   const { search } = req.params;
   res.header("Access-Control-Allow-Origin", "*");
   fetch(
-    `https://newsapi.org/v2/everything?q=+${search}&language=en&to=${currentDate}&sortBy=publishedAt&pageSize=4&apiKey=${process.env.api_key}`
+    `https://newsapi.org/v2/everything?q=+${search}&language=en&to=${currentDate}&sortBy=publishedAt&pageSize=50&apiKey=${process.env.api_key}`
   )
     .then((response) => {
       displayResponse(response, res);
@@ -41,7 +41,7 @@ const categoryNews = (req, res) => {
   res.header("Access-Control-Allow-Origin", "*");
 
   fetch(
-    `https://newsapi.org/v2/top-headlines?country=us&category=${category}&pageSize=5&apiKey=${process.env.api_key}`
+    `https://newsapi.org/v2/top-headlines?country=us&category=${category}&pageSize=50&apiKey=${process.env.api_key}`
   )
     .then((response) => {
       displayResponse(response, res);
