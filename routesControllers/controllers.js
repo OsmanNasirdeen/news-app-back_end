@@ -11,7 +11,7 @@ const displayResponse = (response, res) => {
 
 const allNews = (req, res) => {
   res.header("Access-Control-Allow-Origin", "*");
-  fetch(process.env.api_url_2)
+  fetch(process.env.api_GeneralNews_url)
     .then((response) => {
       displayResponse(response, res);
     })
@@ -26,7 +26,7 @@ const searchedNews = (req, res) => {
   const { search } = req.params;
   res.header("Access-Control-Allow-Origin", "*");
   fetch(
-    `https://newsapi.org/v2/everything?q=+${search}&language=en&to=${currentDate}&pageSize=4&apiKey=${process.env.api_key}`
+    `https://newsapi.org/v2/everything?q=+${search}&language=en&to=${currentDate}&sortBy=publishedAt&pageSize=4&apiKey=${process.env.api_key}`
   )
     .then((response) => {
       displayResponse(response, res);
