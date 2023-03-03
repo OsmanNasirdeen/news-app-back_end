@@ -11,7 +11,7 @@ const displayResponse = (response, res) => {
 
 const allNews = (req, res) => {
   res.header("Access-Control-Allow-Origin", "*");
-  fetch(process.env.api_url)
+  fetch(process.env.homepage_url)
     .then((response) => {
       displayResponse(response, res);
     })
