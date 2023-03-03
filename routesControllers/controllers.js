@@ -41,7 +41,9 @@ const categoryNews = (req, res) => {
   res.header("Access-Control-Allow-Origin", "*");
 
   fetch(
-    `https://newsapi.org/v2/top-headlines?country=us&category=${category}&pageSize=50&apiKey=${process.env.api_key}`
+    category === "Sports"
+      ? process.env.category_sports_url
+      : `https://newsapi.org/v2/top-headlines?country=us&category=${category}&pageSize=50&apiKey=${process.env.api_key}`
   )
     .then((response) => {
       displayResponse(response, res);
